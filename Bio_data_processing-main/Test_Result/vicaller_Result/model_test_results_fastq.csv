@@ -1,0 +1,2 @@
+vicaller_Test_pos_Quantity,vicaller_Test_neg_Quantity,Test_acc,Test_loss,rocauc_score,AveragePrecision_score
+4,5,0.5555555820465088,0.6714482307434082,0.95,0.9666666666666668
