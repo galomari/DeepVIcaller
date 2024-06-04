@@ -10,10 +10,10 @@ def read_fastq(filename):
     sequences = []
     with open(filename, 'r') as file:
         while True:
-            file.readline()  # Skip the name line
-            seq = file.readline().strip()  # Read the sequence line
-            file.readline()  # Skip the + line
-            file.readline()  # Skip the quality line
+            file.readline(5_000_000)  # Skip the name line
+            seq = file.readline(5_000_000).strip()  # Read the sequence line
+            file.readline(5_000_000)  # Skip the + line
+            file.readline(5_000_000)  # Skip the quality line
             if len(seq) == 0:
                 break
             sequences.append(seq)
