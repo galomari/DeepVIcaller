@@ -18,4 +18,38 @@ Run:
 
 Run data_process.py first for data encoding. Two files (vicaller_fastq.npy and vicaller_bam.npy) will be generated and stored in the folder VIcallerData.
 Then run DeepCaller.py. The test results will be generated and stored in the folder Test_Result.
+Install dependencies:
+
+
+pip install -r requirements.txt
+Manually install dependencies if no requirements.txt:
+
+pip install numpy scipy pysam keras
+Run data processing script:
+
+
+python3 process/data_processing_updated.py
+Run DeepVIcaller on FASTQ data:
+
+python3 DeepVIcaller.py --input VIcallerData/fatq_Test_Data.npy --labels VIcallerData/fastqlable_Test_Label.npy --output Test_Result/vicaller_Result/new_model_test_results_fastq.csv --model Model/DeepVIcaller_model.keras
+Run DeepVIcaller on BAM data:
+
+
+python3 DeepVIcaller.py --input VIcallerData/bam_Test_Data.npy --labels VIcallerData/bam_label_Test_Label.npy --output Test_Result/vicaller_Result/new_model_test_results_bam.csv --model Model/DeepVIcaller_model.keras
+View FASTQ results:
+
+
+cat Test_Result/vicaller_Result/new_model_test_results_fastq.csv
+View BAM results:
+
+
+cat Test_Result/vicaller_Result/new_model_test_results_bam.csv
+Clear pip cache (optional):
+
+
+pip cache purge
+Check disk space (optional):
+
+
+df -h
 Contact: If you have any questions, please contact me. Email: galomari@csu.edu
